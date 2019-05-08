@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=580">
+    <title>twitter</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="lightbox.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="favicon192.png" sizes="192x192">
+</head>
+
+<body onload="init();">
+    <div id="tl" width="100%"></div>
+    <div id="ban"></div>
+    <div id="ban-text"></div>
+    <div id="load_lay"><img src="icon_loader.gif"></div>
+    <div id="ping_lay"></div>
+    <div id="detail_panel"></div>
+    <div id="footer_preview"></div>
+    <div class="footer">
+        <label for="file_photo" class="footer-button image-button">
+            <img src="picture.svg" width="70px" height="70px">
+            <form id="form_picture" enctype="multipart/form-data" method="POST">
+                <input type="file" name="data[]" accept="image/*" multiple="multiple" id="file_photo"
+                    onchange="inputPicture(this);" style="display: none;">
+            </form>
+        </label>
+        <textarea class="tweet-input" id="status" maxlength="280" rows="1" placeholder="今なにしてる？"></textarea>
+        <button type="button" class="footer-button tweet-button" onclick="tweet();">
+            <img src="tweet.svg" width="70px" height="70px">
+        </button>
+    </div>
+    <script src="lightbox-plus-jquery.js"></script>
+    <script>
+        lightbox.option({
+            'disableScrolling': false,
+            'albumLabel': "%1 / %2",
+            'fadeDuration': 0,
+            'resizeDuration': 0,
+        })
+    </script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="exif.js"></script>
+    <script type="text/javascript" src="sys.js"></script>
+</body>
+
+</html>
